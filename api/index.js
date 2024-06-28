@@ -54,7 +54,6 @@ app.post("/api/subscribe", async (req, res) => {
         console.error('Error in posting data:', error.response ? error.response.data : error.message);
 
         if (error.response && error.response.status === 400) {
-        // res.status(400).send('Invalid email address. Please enter a real email address.');
         res.status(400).json(error.response.data);
         } else {
         res.status(500).send('Error in posting data.');
